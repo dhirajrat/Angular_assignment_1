@@ -11,9 +11,6 @@ $bcground-color: rgb(247, 247, 247);
   margin-bottom: 1%;
 }
 .user {
-  // border-top: $border-color;
-  // border-top-style: groove;
-  // border-top-width: thin;
   border-left: $border-color;
   border-left-style: groove;
   border-left-width: thin;
@@ -38,7 +35,6 @@ $bcground-color: rgb(247, 247, 247);
   display: flex;
   flex-direction: row;
   flex-flow: nowrap;
-  // justify-content: space-evenly;
 }
 
 .profileimage {
@@ -75,21 +71,10 @@ $bcground-color: rgb(247, 247, 247);
   justify-content: space-around;
 }
 
-// .btnicon {
-//   margin-left: 10px;
-//   margin-right: 10px;
-// }
-
 .addbutton {
   display: flex;
   justify-content: center;
 }
-
-// .usertitle {
-//   font-size: large;
-//   display: inline-block;
-//   text-overflow: ellipsis;
-// }
 
 .image {
   width: 100%;
@@ -103,23 +88,10 @@ $bcground-color: rgb(247, 247, 247);
   background-color: rgb(255, 0, 64);
 }
 
-// .editbutton {
-//   margin-left: 5px;
-//   margin-right: 5px;
-// }
-
-// .deletebutton {
-//   margin-left: 5px;
-// }
-
 .form-head {
   margin-left: 5%;
   margin-bottom: 3%;
 }
-
-// .form-group {
-//   margin-left: 10%;
-// }
 
 .inputfield {
   margin-right: 10%;
