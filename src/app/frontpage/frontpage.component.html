@@ -1,0 +1,133 @@
+<!-- <div class="addbutton">
+  <button type="button" class="btn btn-primary">Add-User</button>
+</div> -->
+<div class="users-group">
+  <ul>
+    <div *ngFor="let user of users" class="user">
+      <li id="{{ user.id }}" class="oneuser">
+        <div class="profileimage">
+          <img [src]="user.image" class="image" />
+        </div>
+        <div>
+          <h3 class="usertitle">{{ user.name }}</h3>
+          <div class="infofield">
+            <div>
+              <mat-icon class="icon">email </mat-icon>
+            </div>
+            <div class="icon-label">: {{ user.email }}</div>
+          </div>
+          <div class="infofield">
+            <div>
+              <mat-icon class="icon">phone_enabled </mat-icon>
+            </div>
+            <div class="icon-label">: {{ user.phone }}</div>
+          </div>
+
+          <div class="infofield">
+            <div>
+              <mat-icon class="icon">language </mat-icon>
+            </div>
+            <div class="icon-label">: {{ user.website }}</div>
+          </div>
+        </div>
+
+        <div class="matcardact">
+          <div *ngIf="user.like; else elseBlock">
+            <button
+              mat-icon-button
+              class="likefavoritebutton"
+              (click)="onFavClick(user)"
+            >
+              <mat-icon>favorite_border </mat-icon>
+            </button>
+          </div>
+          <ng-template #elseBlock>
+            <button
+              mat-icon-button
+              class="favoritebutton"
+              (click)="onFavClick(user)"
+            >
+              <mat-icon>favorite_border </mat-icon>
+            </button>
+          </ng-template>
+
+          <button mat-icon-button class="editbutton" (click)="open(edit, user)">
+            <!-- <button mat-icon-button class="editbutton" (click)="openDialog(user)"> -->
+            <mat-icon>drive_file_rename_outline </mat-icon>
+          </button>
+
+          <button
+            mat-icon-button
+            class="deletebutton"
+            (click)="onDelClick(user)"
+          >
+            <mat-icon>delete_forever </mat-icon>
+          </button>
+        </div>
+      </li>
+    </div>
+  </ul>
+</div>
+
+<!-- Form Template -->
+
+<ng-template #edit let-modal>
+  <div class="form-container">
+    <div class="form-head">
+      <h2>Basic Modal</h2>
+    </div>
+    <div>
+      <form #f="ngForm" (ngSubmit)="submitForm(f)">
+        <div class="form">
+          <div class="formfield">
+            <label class="formlabel">Name :</label>
+            <input
+              name="name"
+              type="text"
+              class="inputfield"
+              [placeholder]="editingUser.name"
+              ngModel
+            />
+          </div>
+          <br />
+          <div class="formfield">
+            <label class="formlabel">Email : </label>
+            <input
+              name="email"
+              type="email"
+              class="inputfield"
+              [placeholder]="editingUser.email"
+              ngModel
+            />
+          </div>
+          <br />
+          <div class="formfield">
+            <label class="formlabel">Phone : </label>
+            <input
+              name="phone"
+              type="number"
+              class="inputfield"
+              [placeholder]="editingUser.phone"
+              ngModel
+            />
+          </div>
+          <br />
+          <div class="formfield">
+            <label class="formlabel">Website :</label>
+            <input
+              name="website"
+              type="text"
+              class="inputfield"
+              [placeholder]="editingUser.website"
+              ngModel
+            />
+          </div>
+          <br />
+        </div>
+        <div class="submitButton">
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ng-template>
