@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-editnote',
@@ -9,6 +9,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class EditnoteComponent implements OnInit {
   updateUserForm = this.fb.group({
+    id: ['', Validators.required],
     name: ['', Validators.required],
     website: ['', Validators.required],
     email: ['', [Validators.required]],
@@ -17,8 +18,12 @@ export class EditnoteComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    public dialogRef: MatDialogRef<EditnoteComponent>
-  ) {}
+    public dialogRef: MatDialogRef<EditnoteComponent>,
+    @Inject(MAT_DIALOG_DATA)
+    public user: any
+  ) {
+    console.log('constr: ', user.id);
+  }
 
   ngOnInit(): void {}
 

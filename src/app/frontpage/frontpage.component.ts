@@ -78,7 +78,7 @@ export class FrontpageComponent implements OnInit, DoCheck, AfterContentInit {
 
   ngDoCheck() {}
 
-  openDialog(user: UserPayload): void {
+  openDialog(user: any): void {
     const dialogRef = this.dialog.open(EditnoteComponent, {
       width: '500px',
       data: user,
@@ -86,11 +86,27 @@ export class FrontpageComponent implements OnInit, DoCheck, AfterContentInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result != undefined) {
-        /*
+        console.log('result: ', result.value);
 
-        Data Comming From Popup Dialogue
-
-        */
+        this.users.forEach((value: any) => {
+          if (value.id == result.value.id) {
+            if (result.value.name != '') {
+              value.name = result.value.name;
+            }
+            if (result.value.email != '') {
+              value.email = result.value.email;
+            }
+            if (result.value.phone != '') {
+              value.phone = result.value.phone;
+            }
+            if (result.value.website != '') {
+              value.website = result.value.website;
+            }
+            // value.email = f.value.email;
+            // value.phone = f.value.phone;
+            // value.website = f.value.website;
+          }
+        });
       }
     });
   }
