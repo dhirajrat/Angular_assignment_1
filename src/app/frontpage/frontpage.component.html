@@ -1,6 +1,8 @@
-<!-- <div class="addbutton">
-  <button type="button" class="btn btn-primary">Add-User</button>
-</div> -->
+<div class="addbutton">
+  <button type="button" class="btn btn-primary" (click)="openAddDialog()">
+    Add-User
+  </button>
+</div>
 <div class="users-group">
   <ul>
     <div *ngFor="let user of users" class="user">

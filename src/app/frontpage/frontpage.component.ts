@@ -2,6 +2,7 @@ import { AfterContentInit, Component, DoCheck, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { AdduserComponent } from '../adduser/adduser.component';
 import { EditnoteComponent } from '../editnote/editnote.component';
 import { UserPayload } from '../models/UserPayload';
 import { AuthService } from '../services/auth.service';
@@ -111,10 +112,36 @@ export class FrontpageComponent implements OnInit, DoCheck, AfterContentInit {
     });
   }
 
+  openAddDialog(): void {
+    const dialogRef = this.dialog.open(AdduserComponent, {
+      width: '500px',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result != undefined) {
+        console.log('result: ', result.value);
+
+        let user: any = {};
+
+        console.log('email1', result.value.email);
+
+        user.email = result.value.email;
+        user.name = result.value.name;
+        user.website = result.value.website;
+        user.phone = result.value.phone;
+        user.like = false;
+        user.image = 'assets/images/user3.svg';
+        console.log('email', result.value.email);
+
+        this.users.push(user);
+      }
+    });
+  }
+
   onFavClick(fuser: any) {
     console.log('user id liked: ', fuser);
     this.users.forEach(function (value: any) {
-      if (value.id == fuser.id) {
+      if (value == fuser) {
         if (value.like == true) {
           value.like = false;
         } else {

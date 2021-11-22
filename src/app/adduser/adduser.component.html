@@ -1,0 +1,81 @@
+<div mat-dialog-content>
+  <div class="dialogContainer">
+    <form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-head">
+        <h2>Add Modal</h2>
+      </div>
+      <hr />
+      <div class="form-container">
+
+        <mat-form-field appearance="outline">
+          <div class="form-field">
+            <label class="label">Name: </label>
+            <input
+              matInput
+              class="input"
+              id="name"
+              name="name"
+              placeholder="user name"
+              formControlName="name"
+            />
+          </div>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <div class="form-field">
+            <label class="label">Email: </label>
+            <input
+              matInput
+              name="email"
+              id="email"
+              class="input"
+              placeholder="user email"
+              formControlName="email"
+            />
+          </div>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <div class="form-field">
+            <label class="label">Phone: </label>
+            <input
+              matInput
+              name="phone"
+              id="phone"
+              class="input"
+              placeholder="user phone"
+              formControlName="phone"
+            />
+          </div>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <div class="form-field">
+            <label class="label">Website: </label>
+            <input
+              matInput
+              name="website"
+              id="website"
+              class="input"
+              placeholder="user website"
+              formControlName="website"
+            />
+          </div>
+        </mat-form-field>
+      </div>
+      <hr />
+      <div class="actionButtons">
+        <button mat-button (click)="onNoClick()">Close</button>
+        <button
+          mat-raised-button
+          color="primary"
+          [mat-dialog-close]="addUserForm"
+          cdkFocusInitial
+        >
+          Add User
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

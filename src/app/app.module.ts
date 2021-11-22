@@ -15,9 +15,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { EditnoteComponent } from './editnote/editnote.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FrontpageComponent } from './frontpage/frontpage.component';
+import { AdduserComponent } from './adduser/adduser.component';
 
 @NgModule({
-  declarations: [AppComponent, EditnoteComponent, FrontpageComponent],
+  declarations: [AppComponent, EditnoteComponent, FrontpageComponent, AdduserComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

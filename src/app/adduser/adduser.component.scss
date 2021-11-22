@@ -1,0 +1,121 @@
+.UpdateUserInput {
+  width: 100%;
+  border: 0px;
+  resize: none;
+  font-style: inherit;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  &:hover {
+    background-color: inherit;
+  }
+}
+
+.user-icon-style {
+  transform: scale(0.8);
+  padding-bottom: 2px;
+}
+
+.from-full-width {
+  width: 100%;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.dialog-item {
+  width: 100%;
+  margin: 2%;
+}
+
+.form-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+}
+
+.form {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  padding: 2%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.form-head-text {
+  text-align: left;
+  font: normal normal normal 28px/37px Roboto;
+  text-transform: capitalize;
+  justify-content: left;
+}
+
+.form-content {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+}
+
+.form-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 5% 0;
+  text-align: center;
+}
+
+.alert-error {
+  font-style: italic;
+  font-size: small;
+  color: red;
+}
+
+.names {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.image-signup {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#image-text {
+  text-align: center;
+  font-size: medium;
+}
+
+.checkbox {
+  margin: 3%;
+}
+
+.form-head {
+  margin-left: 5%;
+  margin-bottom: 0%;
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.input {
+  margin-right: 40%;
+}
+
+.label {
+  margin-right: 5%;
+}
